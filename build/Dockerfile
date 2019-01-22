@@ -25,9 +25,6 @@ RUN curl -fSL ${MANTIS_URL} -o ${MANTIS_FILE} \
 && chown -R www-data:www-data /opt/files \
 && chmod 700 /opt/files
 
-COPY ./strings_portuguese_brazil.txt /var/www/html/lang
-COPY ./config_defaults_inc.php /var/www/html
-
 RUN set -xe \
 && ln -sf /usr/share/zoneinfo/${MANTIS_TIMEZONE} /etc/localtime \
 && echo 'date.timezone = "${MANTIS_TIMEZONE}"' >> /usr/local/etc/php/php.ini \

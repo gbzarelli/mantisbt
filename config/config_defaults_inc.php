@@ -362,7 +362,7 @@ $g_notify_new_user_created_threshold_min = ADMINISTRATOR;
  * creating new accounts, and the password will be set to blank when reset.
  * @global integer $g_send_reset_password
  */
-$g_send_reset_password	= ON;
+$g_send_reset_password	= OFF;
 
 /**
  * use captcha image to validate subscription it requires GD library installed
