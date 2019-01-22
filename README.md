@@ -15,7 +15,7 @@
 
 	$ browser http://localhost:8090/admin/install.php
 
-´´´ text
+``` text
 	==================================================================================
 	Installation Options
 	==================================================================================
@@ -29,7 +29,7 @@
 	Print SQL Queries instead of Writing to the Database    [ ]
 	Attempt Installation                                    [Install/Upgrade Database]
 	==================================================================================
-´´´
+```
 
 	$ browser: http://localhost:8090/
 
