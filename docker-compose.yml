@@ -1,0 +1,27 @@
+version: '3'
+services:
+  mantisbt:
+    container_name: mantis
+    build:
+      context: ./build
+      dockerfile: Dockerfile
+    ports:
+      - "8090:80"
+    volumes:
+      - /opt/mantis/files:/opt/files
+    links:
+      - mysql
+    restart: always
+  mysql:
+    container_name: mantis_mysql
+    image: mariadb:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bugtracker
+      - MYSQL_USER=mantisbt
+      - MYSQL_PASSWORD=mantisbt
+    volumes:
+      - /opt/mantis/mysql:/var/lib/mysql
+    ports:
+      - "3300:3306"
+    restart: always
